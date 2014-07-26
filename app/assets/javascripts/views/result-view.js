@@ -1,9 +1,9 @@
 var ResultView = Backbone.View.extend({
 
-  template: _.template($('#results').html()),
+  template: JST['templates/results'],
 
   initialize: function(){
-
+    this.model.save();
   },
 
   render: function() {

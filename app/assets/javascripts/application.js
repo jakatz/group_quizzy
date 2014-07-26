@@ -15,7 +15,8 @@
 
 //= require underscore-min
 //= require backbone-min
-
+//= require templates/question
+//= require templates/results
 //= require models/question
 //= require collections/questions
 //= require views/result-view

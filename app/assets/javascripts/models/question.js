@@ -4,4 +4,6 @@ var Question = Backbone.Model.extend({
   }
 });
 
-var Result = Backbone.Model.extend();
+var Result = Backbone.Model.extend({
+  urlRoot: '/result'
+});

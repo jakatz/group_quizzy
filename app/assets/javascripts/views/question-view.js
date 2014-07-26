@@ -1,5 +1,5 @@
 var QuestionView = Backbone.View.extend({
-  template: _.template($('#question').html()),
+  template: JST['templates/question'],
   initialize: function(options){
     console.log(options);
   },
