@@ -3,6 +3,8 @@ var QuizView = Backbone.View.extend({
   initialize: function(options){
     // console.log(options);
     this.score = 0;
+    this.listenTo(this.collection,'sync', this.render);
+    this.collection.fetch({reset: true});
   },
 
   render: function(){
