@@ -1,2 +1,6 @@
-<h3>Your Score</h3>
-<h3><%= userScore %> out of <%= total %> answered correctly.</h3>
+<h3>High Scores</h3>
+<ol>
+<% for (var i = 0; i < collection.length; i++) { %>
+<li><strong><%= collection[i].name %>: </strong><%= collection[i].high_score %></li>
+<% } %>
+</ol>

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
   root to: 'quiz#index'
-  resources :result, only: [:new, :create]
+  resources :result, only: [:new, :create, :index]
   resources :quiz
+  resources :questions, only: [:index]
+  resources :score, only: [:create, :show, :index]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

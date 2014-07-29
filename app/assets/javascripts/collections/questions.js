@@ -1,4 +1,4 @@
 var Questions = Backbone.Collection.extend({
-  url: '/quiz/1',
+  url: '/questions',
   model: Question
 });

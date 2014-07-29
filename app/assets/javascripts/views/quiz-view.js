@@ -1,5 +1,6 @@
 var QuizView = Backbone.View.extend({
   el:"#quizzy",
+
   initialize: function(options){
     // console.log(options);
     this.score = 0;
@@ -8,6 +9,8 @@ var QuizView = Backbone.View.extend({
   },
 
   render: function(){
+    // this.$el.append("<h1>" +  + "</h1>")
+    this.$el.append("<input type='text' id='name'>Ey yo, what's yo name?\n")
     this.collection.each(this.addQuestion, this);
     this.$el.append("<button type = 'submit' class = 'quiz-submit'>submit</button>");
   },
@@ -32,13 +35,20 @@ var QuizView = Backbone.View.extend({
     }
 
     var resultView = new ResultView({
-      model: new Result({
-        userScore: this.score,
-        total: collectionList.length
-      })
+      collection: new Results(),
+      el: this.el
     });
 
-    this.$el.empty();
-    this.$el.append(resultView.render().el);
+    resultView.collection.create({
+      userScore: this.score,
+      total: collectionList.length,
+      name: this.$el.find("#name").val()
+    }, {success: function() {resultView.collection.fetch()}});
+
+
+    // resultView.collection.
+
+    // this.$el.empty();
+    // this.$el.append(resultView.render().el);
   }
 });

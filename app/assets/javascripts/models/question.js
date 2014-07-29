@@ -5,5 +5,14 @@ var Question = Backbone.Model.extend({
 });
 
 var Result = Backbone.Model.extend({
-  urlRoot: '/result'
+  urlRoot: '/score'
+});
+
+var Results = Backbone.Collection.extend({
+  url: '/score',
+  model: Result
+});
+
+var Quiz = Backbone.Model.extend({
+  urlRoot: '/quiz'
 });

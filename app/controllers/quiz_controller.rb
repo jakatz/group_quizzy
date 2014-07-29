@@ -6,11 +6,11 @@ class QuizController < ApplicationController
   #   respond_with @quiz_list
   # end
 
-  def show
-    quiz_row = Quiz.find(params[:id])
-    questions = quiz_row.questions
-    respond_with questions
-  end
+  # def show
+  #   quiz_row = Quiz.find(params[:id])
+  #   questions = quiz_row.questions
+  #   respond_with questions
+  # end
 
   # def create
   # end

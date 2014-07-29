@@ -1,13 +1,15 @@
 var ResultView = Backbone.View.extend({
 
-  template: JST['templates/results'],
-
-  initialize: function(){
-    this.model.save();
+  initialize: function() {
+    this.listenTo(this.collection, 'sync', this.render);
+    this.listenTo(this.collection, 'add', this.render);
   },
 
+  template: JST['templates/results'],
+
   render: function() {
-    var newHtml = this.template(this.model.toJSON());
+    var newHtml = this.template({collection: this.collection.toJSON()});
+    this.$el.empty();
     this.$el.html(newHtml);
     return this;
   }
